@@ -34,22 +34,40 @@ You don't need to install it separately — just make sure the script `recognize
 ### 🔍 3. Install Tesseract OCR
 
 - **Windows**:  
-  Download the installer from [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki).  
-  During installation, select the desired languages (e.g., English, French).  
+  Download from [UB Mannheim builds](https://github.com/UB-Mannheim/tesseract/wiki)  
+  During setup, check the language(s) you need (e.g. English, French).  
   Default install path: `C:\Program Files\Tesseract-OCR`
 
 - **macOS**:  
   Install via Homebrew:
+
   ```bash
   brew install tesseract
   ```
 
 - **Linux (Debian/Ubuntu)**:
+  
   ```bash
   sudo apt install tesseract-ocr
   ```
 
-### 📥 4. Install Python dependencies
+### 💡 4. Create and activate a virtual environment (recommended)
+
+#### Windows (Virtual Environment)
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### macOS/Linux (Virtual Environment)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 📥 5. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -80,9 +98,41 @@ python script.py
 
 ---
 
+## 🔁 After Restarting Your Computer
+
+To relaunch the app after rebooting:
+
+### 1. Open a terminal and navigate to the project
+
+```bash
+cd path/to/chess2anki
+```
+
+### 2. Reactivate the virtual environment
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### macOS/Linux
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Run the script
+
+```bash
+python script.py
+```
+
+---
+
 ## 📂 Project Structure
 
-```
+```md
 project/
 ├── images/              # Your input images go here
 ├── generated_images/    # FEN-generated board images
@@ -90,6 +140,7 @@ project/
 ├── recognize.py         # Chessboard recognizer script
 ├── script.py            # Main automation script
 ├── anki_deck.csv        # Final CSV ready to import into Anki
+├── venv/                # Virtual environment (not committed)
 └── requirements.txt     # Python dependencies
 ```
 
