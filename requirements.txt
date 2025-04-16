@@ -1,0 +1,6 @@
+pytesseract
+pillow==9.2.0
+opencv-python
+python-chess
+cairosvg
+tensorflow==2.10.0
